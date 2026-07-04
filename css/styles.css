@@ -402,13 +402,29 @@ body {
 }
 .container-couple {
     background: linear-gradient(to top, #f1f2f3e0, #82766d);
-    padding: 80px 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 0;
+    padding: 2rem 1rem; /* адаптивные отступы */
+    text-align: center; /* центрируем весь текст */
+    box-sizing: border-box;
+}
+
+    /* Если внутри есть заголовки и параграфы */
+    .container-couple h2,
+    .container-couple p {
+        max-width: 700px; /* ограничиваем ширину для удобочитаемости */
+        margin: 0.5rem auto; /* центрируем блоки */
+        text-align: center;
+    }
+
+/* Дополнительно для очень маленьких экранов */
+@media (max-width: 480px) {
+    .container-couple {
+        padding: 1.5rem 0.8rem;
+    }
 }
 .bride-img,
 .groom-img {
@@ -584,28 +600,42 @@ body {
   transition: transform 500ms ease-in-out;
 }
 .event-img {
-  width: 50%;
-  height: 20rem;
-  border-radius: 25px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
+    width: 50%;
+    height: 20rem;
+    border-radius: 25px;
+    overflow: hidden;
+    /* общие свойства для фона вынесены в каждый класс отдельно */
 }
+
 .event-img-haldi {
-  background-image: url(/images/mehendi.jpg);
+    background-image: url("../images/mehendi.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 .event-img-wedding {
-  background-image: url(/images/Haldi-photo.jpg);
+    background-image: url("../images/Haldi-photo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 .event-img-recp {
-  background-image: url(/images/wedding.jpg);
+    background-image: url("../images/wedding.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+/* Остальные стили (hover) без изменений */
 .event-desc:hover .event-img-haldi,
 .event-desc:hover .event-img-recp {
-  transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
 }
+
 .event-desc:hover .event-img-wedding {
-  transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
 }
 .event-para {
   align-items: center;
