@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Nunito:wght@200;300;400&family=Parisienne&family=Raleway:ital,wght@1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=Nunito:wght@200;300;400&family=Parisienne&family=Raleway:ital,wght@1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 
 /* Main index */
@@ -839,7 +839,27 @@ body {
         margin-top: -90px;
         max-width: 90%; /* чтобы на маленьких экранах не вылезал */
     }
+@media (max-width: 768px) {
+    .event-flow {
+        min-height: 200px; /* можно уменьшить минимальную высоту */
+        padding: 30px 15px; /* чуть меньше отступов */
+    }
 
+        .event-flow h3 {
+            font-size: 0.95rem; /* уменьшаем шрифт на мобильных */
+            padding: 15px 18px;
+            max-width: 95%;
+        }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .event-flow h3 {
+        font-size: 0.85rem;
+        padding: 12px 15px;
+        border-radius: 8px;
+    }
+}
 /* Общий блок */
 .dresscode-block {
     max-width: 900px;
@@ -918,6 +938,30 @@ body {
     .group-title {
         font-size: 1.2em;
     }
+}
+
+.photo-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .photo-pair {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .photo-item {
+        background-color: #f0f0f0; /* заполнит пустые области */
+    }
+
+        .photo-item img {
+            height: 250px; /* можно оставить или изменить */
+            object-fit: contain; /* ← теперь не обрезает */
+        }
 }
 
 @media screen and (max-width: 1024px) {
